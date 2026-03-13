@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jaenal Arifin — Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  
+  <style>
+   
+    .container-max { max-width: 1500px;  }
+   
+
+    
+
+    /* subtle glass card background */
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
+    }
+
+    /* =========================
+       HEXAGON (fixed implementation)
+       - photo clipped by clip-path (.hex)
+       - visible OUTLINE rendered by SVG (.hex-svg + .hex-stroke)
+       - sparkle layer (.hex-sparkles)
+       ========================= */
+
+    /* base hex clip used for the photo area */
+    .hex {
+      clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+      background: transparent;
+      position: relative; /* required for sparkles layering */
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    /* wrapper around hex to hold SVG outline and photo */
+    .hex-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    /* the bright neon outline is an SVG positioned around the hex */
+    .hex-svg {
+      position: absolute;
+      inset: -6%; /* slightly outside so stroke doesn't overlap photo */
+      width: 112%;
+      height: 112%;
+      z-index: 4; /* above photo */
+      pointer-events: none;
+      display: block;
+      transform-origin: center;
+      filter: drop-shadow(0 0 12px rgba(6,182,212,0.8))
+              drop-shadow(0 0 30px rgba(6,182,212,0.55));
+    }
+
+    .hex-stroke {
+      fill: none;
+      stroke: #05c7e0;
+      stroke-width: 1.8;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      vector-effect: non-scaling-stroke;
+      opacity: 0.9;
+      /* glow animation */
+      animation: hexGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes hexGlow {
+      0% {
+        stroke: #05c7e0;
+        opacity: .55;
+        filter: drop-shadow(0 0 6px rgba(6,182,212,.45));
+      }
+      50% {
+        stroke: #22e6ff;
+        opacity: 1;
+        filter:
+          drop-shadow(0 0 18px rgba(6,182,212,1))
+          drop-shadow(0 0 36px rgba(6,182,212,.85));
+      }
+      100% {
+        stroke: #05c7e0;
+        opacity: .55;
+        filter: drop-shadow(0 0 6px rgba(6,182,212,.45));
+      }
+    }
+
+    /* The actual image is inside the hex (clipped) */
+    .hex img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+      transform: translateZ(0);
+    }
+
+    /* subtle additional glow behind the SVG outline (soft halo) */
+    .hex-outline-halo {
+      position: absolute;
+      inset: -10%;
+      z-index: 3;
+      pointer-events: none;
+      background: radial-gradient(closest-side, rgba(6,182,212,0.08), transparent 40%);
+      filter: blur(16px);
+    }
+
+    /* SPARKLES: small animated dots/shine around the hex image */
+    .hex-sparkles {
+      position: absolute;
+      inset: -10%;
+      z-index: 5; /* on top of halo but below SVG if desired; we set above so small glints show */
+      pointer-events: none;
+      mix-blend-mode: screen;
+      background-image:
+        radial-gradient(circle at 12% 20%, rgba(255,255,255,0.95) 0 1px, transparent 2px),
+        radial-gradient(circle at 28% 10%, rgba(180,255,255,0.9) 0 1px, transparent 2px),
+        radial-gradient(circle at 50% 15%, rgba(200,255,255,0.8) 0 1px, transparent 2px),
+        radial-gradient(circle at 75% 30%, rgba(140,255,255,0.75) 0 1px, transparent 2px),
+        radial-gradient(circle at 70% 70%, rgba(255,255,255,0.7) 0 1px, transparent 2px),
+        radial-gradient(circle at 30% 75%, rgba(200,255,255,0.6) 0 1px, transparent 2px);
+      background-size: 250% 250%;
+      opacity: 0.95;
+      filter: blur(0.6px);
+      animation: sparkleShift 7s linear infinite, sparklePulse 2.6s ease-in-out infinite;
+    }
+
+    .hex-sparkles::before{
+      /* soft cyan sheen */
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background: radial-gradient(circle at 60% 35%, rgba(6,182,212,0.12), transparent 22%),
+                  radial-gradient(circle at 15% 70%, rgba(6,182,212,0.07), transparent 18%);
+      filter: blur(18px);
+      z-index:-1;
+      animation: sheenMove 9s linear infinite;
+    }
+
+    @keyframes sparkleShift {
+      0%{ background-position: 0% 0% }
+      50%{ background-position: 40% 20% }
+      100%{ background-position: 0% 0% }
+    }
+    @keyframes sparklePulse {
+      0%{ opacity: .85 }
+      50%{ opacity: 1 }
+      100%{ opacity: .9 }
+    }
+    @keyframes sheenMove {
+      0%{ transform: translateX(-10%) }
+      50%{ transform: translateX(10%) }
+      100%{ transform: translateX(-10%) }
+    }
+
+    /* ---------------------------
+       keep your original styles
+       (cards, badges, buttons, etc)
+       --------------------------- */
+
+    /* small badge style */
+    .tech-badge {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+    }
+
+    /* horizontal snap scroll smoothing */
+    .snap-scroll { scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+    .card-neon{
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem; /* rounded-xl */
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.03);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+    /* ====== project card neon (replace/extend your .card-neon) ====== */
+.card-neon{
+  position: relative;
+  overflow: visible; /* supaya glow tidak terpotong */
+  border-radius: 1rem; /* rounded-xl */
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.03);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: transform .16s ease, box-shadow .2s ease;
+  z-index: 0;
+}
+
+/* main soft neon border (subtle rim) */
+.card-neon::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  background: linear-gradient(90deg,
+    rgba(6,182,212,0.06),
+    rgba(59,130,246,0.03),
+    rgba(6,182,212,0.06)
+  );
+  filter: blur(8px);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* bottom neon glow stripe */
+.card-neon::after{
+  content:"";
+  position:absolute;
+  left:16px; right:16px; bottom:10px;
+  height:14px;
+  border-radius:10px;
+  background: linear-gradient(90deg, rgba(6,182,212,0), rgba(6,182,212,0.28), rgba(6,182,212,0));
+  filter: blur(12px);
+  pointer-events:none;
+  z-index:-1;
+}
+
+/* hover pop */
+.card-neon:hover{
+  transform: translateY(-8px);
+  box-shadow:
+    0 30px 80px rgba(6,182,212,0.12),
+    0 8px 30px rgba(2,6,8,0.6);
+}
+
+/* ===== image area ===== */
+   .card-image {
+     width: 100%;
+     height: 14rem; /* increased default height */
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     border-radius: 0.5rem;
+     position: relative;
+     z-index: 1;
+     box-shadow: 0 6px 22px rgba(0,0,0,0.45) inset;
+     overflow: hidden;
+   }
+
+/* soft vignette on top of image so text / badges read nicely */
+.card-image::after{
+  content:"";
+  position:absolute; inset:0; border-radius:0.5rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.48));
+  pointer-events:none;
+  z-index: 2;
+}
+
+/* small centered radial highlight to mimic neon reflection */
+.card-image::before{
+  content:"";
+  position:absolute;
+  inset: -20% -20% -20% -20%;
+  background: radial-gradient(circle at 60% 30%, rgba(6,182,212,0.06), transparent 20%);
+  filter: blur(18px);
+  pointer-events:none;
+  z-index: 0;
+}
+
+/* card body above image */
+.card-body{ position: relative; z-index: 3; padding-top:0.6rem; }
+
+ /* tech badge (keep) */
+.tech-badge {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+}
+
+/* buttons */
+.btn-outline {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  color: #e6eef1;
+  text-decoration: none;
+}
+.btn-primary {
+  background: linear-gradient(90deg,#06c1d9,#0496b0);
+  color:#071017;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(6,182,212,0.28);
+}
+.btn-primary:hover{ box-shadow: 0 10px 30px rgba(6,182,212,0.45); }
+
+ /* responsive sizes */
+@media (min-width: 900px){
+     .card-image { height: 16rem; } /* slightly taller on larger screens */
+     .min-w-card-md { min-width: 360px; } /* wider cards */
+}
+
+  </style>
+  <link rel="stylesheet" href="neon.css">
+</head>
+<body class="bg-neutral-900 text-neutral-100 antialiased">
+
+  <header class="sticky top-0 z-40 bg-neutral-900/60 backdrop-blur-sm border-b border-neutral-800">
+    <div class="mx-auto container-max px-6 py-3 flex items-center justify-between">
+      <div class="font-bold text-lg">Portofolio.</div>
+      <nav class="space-x-6 text-sm">
+        <a href="#home" class="hover:text-cyan-300">Home</a>
+        <a href="#projects" class="hover:text-cyan-300">Projects</a>
+        <a href="#skills" class="hover:text-cyan-300">Skills</a>
+        <a href="#contact" class="hover:text-cyan-300">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="px-6">
+    <!-- HERO -->
+    <section id="home" class="mx-auto container-max mt-8">
+      <div class="glass neon-outline-effect rounded-2xl p-12 md:p-16 relative overflow-visible min-h-[500px] md:min-h-[600px]">
+        <!-- glow background -->
+        <div class="absolute -right-20 -bottom-24 w-96 h-96 rounded-full bg-cyan-500/20 blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <!-- left: text -->
+          <div class="space-y-4 max-w-xl">
+
+            <h1 class="text-5xl md:text-6xl font-extrabold">Hi, I'm Jaenal Arifin</h1>
+            <p class="text-3xl md:text-4xl text-cyan-300 font-semibold">QA Engineer &amp; Mobile Developer </p>
+
+            <p class="text-neutral-300 mt-3 text-lg">I build mobile apps and run QA/performance tests. I enjoy clean code, reliable tests, and fast UIs.</p>
+
+            <div class="flex items-center gap-3 mt-5">
+              <a href="/cv.pdf" class="inline-flex items-center gap-3 bg-cyan-500 text-neutral-900 px-10 py-5 rounded-full shadow-sm hover:bg-cyan-600">
+                <!-- download icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2M7 10l5 5 5-5M12 15V3" /></svg>
+                Download CV
+              </a>
+
+              <a href="#projects" class="inline-flex items-center gap-2 border border-neutral-700 px-10 py-5 rounded-full hover:border-cyan-300">
+                View Projects
+              </a>
+            </div>
+
+          </div>
+
+          <!-- right: profile hexagon -->
+          <div class="flex justify-center md:justify-end">
+            <div class="hex-border w-72 h-72 md:w-96 md:h-96 relative">
+              <!-- NEW: hex-container holds the SVG outline + clipped photo + sparkles -->
+              <div class="hex-container w-full h-full">
+                <!-- SVG stroke outline (the actual glowing hexagon line) -->
+                <svg class="hex-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                  <polygon points="25,5 75,5 100,50 75,95 25,95 0,50" class="hex-stroke"></polygon>
+                </svg>
+
+                <!-- soft halo behind outline -->
+                <div class="hex-outline-halo" aria-hidden="true"></div>
+
+                <!-- the clipped photo -->
+                <div class="hex">
+                  <img src="profile.png" alt="Profile" class="" />
+                </div>
+
+                <!-- sparkles on top -->
+                <div class="hex-sparkles" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+  <section id="projects" class="mx-auto container-max mt-10">
+  <div class="glass neon-outline-effect rounded-2xl p-12 md:p-8 min-h-[500px]">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-6">Projects</h2>
+
+    <div class="overflow-x-auto snap-scroll pb-4">
+      <div class="flex gap-6 snap-x snap-mandatory items-start md:items-center md:justify-center">
+        <!-- Card 1 -->
+        <a href="jagafakta.html" class="block snap-start">
+          <article class="card-neon neon-outline-effect min-w-card-md rounded-xl p-5 border-neutral-800 shadow-sm">
+            <div class="card-image rounded-lg mb-4" style="background-image:url('jagafakta.png')"></div>
+
+            <div class="card-body">
+              <h3 class="font-semibold text-xl">Jaga Fakta.id</h3>
+              <p class="text-sm text-neutral-400">Hoax Detection App</p>
+
+              <div class="mt-3 flex gap-2 flex-wrap">
+                <span class="tech-badge">Kotlin</span>
+                <span class="tech-badge">FastAPI</span>
+                <span class="tech-badge">IndoBERT</span>
+                <span class="tech-badge">Firebase</span>
+              </div>
+
+              <div class="mt-5 flex gap-3">
+                <a class="btn-outline" href="jagafakta.html">Details</a>
+                <a class="btn-primary" href="https://github.com/Jaefin123/Jagafakta" target="_blank" rel="noopener">View on GitHub</a>
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="syman.html" class="block snap-start">
+          <article class="card-neon neon-outline-effect min-w-card-md rounded-xl p-5 border-neutral-800 shadow-sm">
+            <div class="card-image rounded-lg mb-4" style="background-image:url('Syman.png')"></div>
+
+            <div class="card-body">
+              <h3 class="font-semibold text-xl">Syman Interior</h3>
+              <p class="text-sm text-neutral-400 mt-1">website for ordering and ceiling installation services</p>
+
+              <div class="mt-4 flex gap-2 flex-wrap">
+                <span class="tech-badge">Laravel</span>
+                <span class="tech-badge">MySQL</span>
+                <span class="tech-badge">Blade</span>
+              </div>
+
+              <div class="mt-5 flex gap-3">
+                <a class="btn-outline" href="syman.html">Details</a>
+                <a class="btn-primary" href="https://github.com/Jaefin123/Syman-Interior" target="_blank" rel="noopener">View on GitHub</a>
+              </div>
+            </div>
+          </article>
+        </a>
+
+        <!-- Card 3: More -->
+         <a href="testing.html" class="block snap-start">
+          <article class="card-neon neon-outline-effect min-w-card-md rounded-xl p-5 border-neutral-800 shadow-sm">
+            <div class="card-image rounded-lg mb-4" style="background-image:url('QA2.png')"></div>
+
+            <div class="card-body">
+              <h3 class="font-semibold text-xl">SP4N — QA Case Study</h3>
+              <p class="text-sm text-neutral-400">UAT, Load & Security Testing</p>
+
+              <div class="mt-3 flex gap-2 flex-wrap">
+                <span class="tech-badge">JMeter</span>
+                <span class="tech-badge">OWASP ZAP</span>
+                <span class="tech-badge">Google Sheets</span>
+              </div>
+
+              <div class="mt-5 flex gap-3">
+                <a class="btn-outline" href="testing.html">Details</a>
+                <a class="btn-primary" href="files/SP4N_UAT_sample_sanitized.pdf" download>Download</a>
+              </div>
+            </div>
+          </article>
+        </a>
+        
+
+      </div>
+    </div>
+    <div class="mt-5 flex gap-3 md:items-center md:justify-center">
+                
+                <a class="btn-primary px-8 py-4 text-lg" href="more.html"  rel="noopener">View All Projects</a>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- SKILLS -->
+    <section id="skills" class="mx-auto container-max mt-10">
+      <div class="glass neon-outline-effect rounded-2xl p-12 md:p-14 min-h-[500px]">
+        <h2 class="text-3xl md:text-4xl font-semibold mb-6">Skills</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-5 rounded-lg neon-outline-effect bg-neutral-900/40 border border-neutral-800">
+            <h3 class="font-semibold mb-3 text-lg">Frontend / Mobile</h3>
+            <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-center gap-2">
+              <!-- Kotlin SVG -->
+              <svg width="18" height="18" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="kotlinSkill" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#7F52FF"/>
+                    <stop offset="50%" stop-color="#C711E1"/>
+                    <stop offset="100%" stop-color="#FF9800"/>
+                  </linearGradient>
+                </defs>
+                <polygon fill="url(#kotlinSkill)" points="0,256 256,256 256,0"/>
+                <polygon fill="url(#kotlinSkill)" points="0,0 128,128 0,256"/>
+              </svg>
+              Kotlin
+            </li>
+
+            <li class="flex items-center gap-2">
+              🤖 Android Studio
+            </li>
+
+            <li class="flex items-center gap-2">
+              🧩 Jetpack Compose
+            </li>
+          </ul>
+
+          </div>
+          <div class="p-5 rounded-lg neon-outline-effect bg-neutral-900/40 border border-neutral-800">
+            <h3 class="font-semibold mb-3 text-lg">Backend / API</h3>
+            <ul class="space-y-2 text-neutral-300">
+            <li class="flex items-center gap-2">
+              <!-- Laravel SVG -->
+              <svg width="18" height="18" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                <g fill="#FF2D20">
+                  <path d="M128 16 32 64v96l96 48 96-48V64z"/>
+                  <path d="M128 16v96l96 48V64z" opacity=".85"/>
+                  <path d="M128 112 32 64v96l96 48z" opacity=".7"/>
+                </g>
+              </svg>
+              Laravel
+            </li>
+
+            <li class="flex items-center gap-2">
+              ⚡ FastAPI
+            </li>
+
+            <li class="flex items-center gap-2">
+              🔥 Firebase
+            </li>
+          </ul>
+
+          </div>
+          <div class="p-5 rounded-lg neon-outline-effect bg-neutral-900/40 border border-neutral-800">
+            <h3 class="font-semibold mb-3 text-lg">Testing / QA</h3>
+            <ul class="space-y-2 text-neutral-300">
+              <li> 🧪 Manual Testing</li>
+              <li> 📊 JMeter</li>
+              <li> 🛡️ OWASP ZAP</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-10 flex gap-3 md:items-center md:justify-center">
+                
+                <a class="btn-primary px-10 py-5 text-lg" href="https://www.linkedin.com/in/jaenal-arifin-3a97382b0/details/certifications/"  rel="noopener">Certificates</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mx-auto container-max mt-10 mb-20">
+      <div class="glass neon-outline-effect rounded-2xl p-12 md:p-14 text-center min-h-[300px]">
+        <h2 class="text-3xl md:text-4xl font-semibold mb-3">Let's work together</h2>
+        <p class="text-neutral-300 mb-5 text-lg">Email: <a href="mailto:jaenalarifin589@gmail.com" class="text-cyan-300">jaenalarifin589@gmail.com</a></p>
+        <div class="flex items-center justify-center gap-4">
+          <a href="https://www.linkedin.com/in/jaenal-arifin-3a97382b0/" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-700 hover:border-cyan-300">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zm7 0h3.84v1.98h.05c.54-1.02 1.86-2.1 3.83-2.1 4.1 0 4.86 2.7 4.86 6.2V23h-4v-5.9c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V23h-4V8.5z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/Jaefin123" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-700 hover:border-cyan-300">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.78.42-1.3.76-1.6-2.67-.3-5.48-1.33-5.48-5.93 0-1.31.47-2.38 1.24-3.22-.12-.31-.54-1.57.12-3.27 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.7.24 2.96.12 3.27.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.49 5.93.43.37.82 1.1.82 2.23v3.3c0 .32.22.7.83.58A12 12 0 0 0 12 .5"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.instagram.com/jaefin0923/" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-700 hover:border-cyan-300">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.057-1.645.069-4.849.069-3.205 0-3.584-.012-4.849-.069-3.259-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/></svg>
+            Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center text-sm text-neutral-500 pb-8">
+    © <span id="year"></span> Jaenal Arifin
+  </footer>
+
+  <script>
+    // set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // optional: keyboard arrows for horizontal scroll in projects
+    const projectsWrap = document.querySelector('#projects .snap-scroll > div');
+    if (projectsWrap) {
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') projectsWrap.scrollBy({ left: 320, behavior: 'smooth' });
+        if (e.key === 'ArrowLeft') projectsWrap.scrollBy({ left: -320, behavior: 'smooth' });
+      });
+    }
+  </script>
+</body>
+</html>

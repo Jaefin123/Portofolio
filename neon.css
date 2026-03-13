@@ -1,0 +1,22 @@
+/* Neon border outline effect for section boxes */
+.neon-outline-effect {
+  position: relative;
+  border-radius: inherit;
+  border: 1.5px solid rgba(6, 182, 212, 0.5);
+  box-shadow: 
+    0 0 10px rgba(6, 182, 212, 0.4),
+    0 0 20px rgba(6, 182, 212, 0.2),
+    /* stronger glow at bottom */
+    0 12px 20px rgba(6, 182, 212, 0.25);
+  transition: box-shadow .24s ease, border-color .24s ease;
+}
+
+/* On hover: brighten the neon effect */
+.neon-outline-effect:hover {
+  border-color: rgba(6, 182, 212, 0.8);
+  box-shadow: 
+    0 0 15px rgba(6, 182, 212, 0.6),
+    0 0 30px rgba(6, 182, 212, 0.35),
+    0 12px 30px rgba(6, 182, 212, 0.4);
+}
+

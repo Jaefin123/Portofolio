@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SP4N LAPOR — QA Case Study</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="neon.css">
+</head>
+
+<body class="bg-neutral-900 text-neutral-100">
+
+  <!-- Top bar -->
+  <header class="sticky top-0 z-40 bg-neutral-900/70 backdrop-blur border-b border-neutral-800">
+    <div class="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="index.html" class="text-sm text-neutral-400 hover:text-cyan-300">← Back</a>
+      <span class="text-sm text-neutral-500">QA Case Study</span>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="px-6 py-10">
+    <section class="max-w-5xl mx-auto bg-neutral-900/50 border border-neutral-800 rounded-2xl p-8 md:p-10 neon-outline-effect">
+
+      <!-- Header -->
+      <div class="flex flex-col items-center text-center">
+      <div class="bg-neutral-800/40 border border-neutral-700 rounded-2xl p-3 neon-outline-effect">
+
+      <!-- LOGO -->
+      <div class="flex justify-center mb-6">
+        <img src="Syman.png"
+             alt="Jaga Fakta Logo"
+             class="w-70 h-70 object-containrounded-xl p-3">
+      </div>
+      </div>
+
+        <h1 class="text-3xl font-bold">SP4N LAPOR</h1>
+        <p class="text-cyan-300 mt-1">QA Case Study UAT & Security Testing</p>
+      </div>
+
+      <!-- Description -->
+      <div class="mt-8 space-y-4 text-neutral-300">
+        <p>
+          This case study summarizes the <strong>User Acceptance Testing (UAT)</strong>, functional validation, and security testing carried out for a national 
+          public-service platform. The samples shown here have been carefully sanitized to remove sensitive details 
+          such as credentials, internal links, and organizational identifiers.
+        </p>
+
+        <p>
+          If you would like to review the full findings and raw evidence, 
+          those can be provided to authorized parties under a non-disclosure agreement.
+        </p>
+      </div>
+
+      <!-- Role -->
+      <div class="mt-6">
+        <h3 class="font-semibold mb-2">Role & Responsibility</h3>
+        <ul class="list-disc list-inside text-neutral-300 text-sm space-y-1">
+          <li>QA Engineer User Acceptance Testing (UAT)</li>
+          <li>Functional & Regression Testing</li>
+          <li>Load & Security Testing</li>
+        </ul>
+      </div>
+
+      <!-- Tools -->
+      <div class="mt-6">
+        <h3 class="font-semibold mb-3">Tools Used</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-full text-xs bg-neutral-800 border border-neutral-700">JMeter</span>
+          <span class="px-3 py-1 rounded-full text-xs bg-neutral-800 border border-neutral-700">OWASP ZAP</span>
+          <span class="px-3 py-1 rounded-full text-xs bg-neutral-800 border border-neutral-700">Excel / Google Sheets</span>
+          <span class="px-3 py-1 rounded-full text-xs bg-neutral-800 border border-neutral-700">Manual Testing</span>
+        </div>
+      </div>
+
+      <!-- Evidence -->
+      <div class="mt-8">
+        <h3 class="font-semibold mb-3">Sample Evidence (Sanitized)</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="border border-neutral-800 rounded-lg p-3 neon-outline-effect">
+            <img src="uat-preview.png" alt="UAT preview" class="rounded-md mb-2">
+            <p class="text-xs text-neutral-400">UAT Sheet (sanitized preview)</p>
+          </div>
+
+          <div class="border border-neutral-800 rounded-lg p-3 neon-outline-effect">
+            <img src="zap-preview.png" alt="ZAP preview" class="rounded-md mb-2">
+            <p class="text-xs text-neutral-400">OWASP ZAP findings (summary)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="SP4N_UAT_sample_sanitized.pdf"
+           class="px-5 py-2 rounded-full bg-cyan-500 text-neutral-900 hover:bg-cyan-400">
+          View Sample Report
+        </a>
+
+        <a href="mailto:jaenalarifin589@gmail.com"
+           class="px-5 py-2 rounded-full border border-neutral-700 hover:border-cyan-300">
+          Request Full Report (NDA)
+        </a>
+      </div>
+
+      <p class="mt-4 text-xs text-neutral-500 text-center">
+        Full QA documentation available upon request under NDA.
+      </p>
+
+    </section>
+  </main>
+
+</body>
+</html>
