@@ -167,31 +167,72 @@
             >Contact</a
           >
         </nav>
+        <!-- Mobile Navigation Menu -->
+        <div
+          id="mobileMenu"
+          class="hidden md:hidden border-t border-cyber-slateBorder/80 bg-cyber-950/95 backdrop-blur-xl"
+        >
+          <nav class="px-4 py-3 space-y-1">
+            <a
+              href="#hero"
+              class="block px-4 py-3 rounded-lg text-sm font-medium text-cyan-400 bg-cyan-950/30 border border-cyan-500/20 transition-colors"
+            >
+              Home
+            </a>
+
+            <a
+              href="#projects"
+              class="block px-4 py-3 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/30 transition-colors"
+            >
+              Projects
+            </a>
+
+            <a
+              href="#skills"
+              class="block px-4 py-3 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/30 transition-colors"
+            >
+              Skills
+            </a>
+
+            <a
+              href="#contact"
+              class="block px-4 py-3 rounded-lg text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-cyan-950/30 transition-colors"
+            >
+              Contact
+            </a>
+          </nav>
+        </div>
         <!-- Right Profile & Status Capsule (identical to SCREEN_7) -->
         <div class="flex items-center gap-3">
           <div class="hidden lg:flex flex-col text-right">
-            <span class="text-xs text-slate-400 font-mono tracking-wider"
-              ></span
-            >
+            <span class="text-xs text-slate-400 font-mono tracking-wider"></span>
             <span class="text-sm font-bold text-slate-100">Jaenal Arifin</span>
           </div>
-          <div
-            class="relative flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-cyan-950 to-slate-900 border border-cyan-500/50 shadow-[0_0_12px_rgba(0,229,255,0.25)] text-cyan-300 font-bold text-xs tracking-wider"
+
+          <!-- JA Avatar = Mobile Menu Toggle -->
+          <button
+            id="mobileMenuButton"
+            type="button"
+            class="relative flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-cyan-950 to-slate-900 border border-cyan-500/50 shadow-[0_0_12px_rgba(0,229,255,0.25)] text-cyan-300 font-bold text-xs tracking-wider cursor-pointer hover:border-cyan-400 transition-all"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
           >
             JA
+
             <span
               class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-cyber-950"
             ></span>
-          </div>
+          </button>
         </div>
       </div>
     </header>
     <!-- END: MainHeader -->
     <!-- BEGIN: MainContent -->
-    <main class="max-w-7xl mx-auto px-6 py-10 space-y-16">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-12 sm:space-y-16">
       <!-- BEGIN: HeroSection -->
       <section
-        class="screen-frame rounded-2xl bg-cyber-900/60 p-8 lg:p-12 relative overflow-hidden backdrop-blur-xl"
+        class="screen-frame rounded-2xl bg-cyber-900/60 p-5 sm:p-8 lg:p-12 relative overflow-hidden backdrop-blur-xl"
         id="hero"
       >
         <!-- Glow ambient lights -->
@@ -311,13 +352,14 @@
             ></div>
 
             <!-- Circular Profile HUD Wrapper -->
-            <div class="relative w-[360px] h-[420px] sm:w-[460px] sm:h-[500px]">
+            <div class="relative w-[280px] h-[340px] sm:w-[360px] sm:h-[420px] lg:w-[460px] lg:h-[500px]">
 
                 <!-- Outer circular glow -->
                 <div
                 class="absolute left-1/2 top-[43%] -translate-x-1/2 -translate-y-1/2
-                        w-[285px] h-[285px]
-                        sm:w-[360px] sm:h-[360px]
+                        w-[225px] h-[225px]
+                        sm:w-[285px] sm:h-[285px]
+                        lg:w-[360px] lg:h-[360px]
                         rounded-full
                         border border-cyan-400/20
                         shadow-[0_0_25px_rgba(0,229,255,0.12)]"
@@ -326,8 +368,9 @@
                 <!-- Outer HUD ring -->
                 <div
                 class="absolute left-1/2 top-[43%] -translate-x-1/2 -translate-y-1/2
-                        w-[265px] h-[265px]
-                        sm:w-[340px] sm:h-[340px]
+                        w-[210px] h-[210px]
+                        sm:w-[265px] sm:h-[265px]
+                        lg:w-[340px] lg:h-[340px]
                         rounded-full
                         border-[3px] border-cyan-400
                         shadow-[0_0_15px_rgba(0,229,255,0.65),0_0_35px_rgba(0,229,255,0.22)]"
@@ -336,8 +379,9 @@
                 <!-- Second HUD ring -->
                 <div
                 class="absolute left-1/2 top-[43%] -translate-x-1/2 -translate-y-1/2
-                        w-[286px] h-[286px]
-                        sm:w-[362px] sm:h-[362px]
+                        w-[226px] h-[226px]
+                        sm:w-[286px] sm:h-[286px]
+                        lg:w-[362px] lg:h-[362px]
                         rounded-full
                         border border-cyan-500/30"
                 ></div>
@@ -345,8 +389,9 @@
                 <!-- Dashed / technical outer ring -->
                 <div
                 class="absolute left-1/2 top-[43%] -translate-x-1/2 -translate-y-1/2
-                        w-[305px] h-[305px]
-                        sm:w-[385px] sm:h-[385px]
+                        w-[242px] h-[242px]
+                        sm:w-[305px] sm:h-[305px]
+                        lg:w-[385px] lg:h-[385px]
                         rounded-full
                         border border-dashed border-cyan-400/20"
                 ></div>
@@ -354,8 +399,9 @@
                 <!-- Circular segmented accent -->
                 <div
                 class="absolute left-1/2 top-[43%] -translate-x-1/2 -translate-y-1/2
-                        w-[280px] h-[280px]
-                        sm:w-[355px] sm:h-[355px]
+                        w-[220px] h-[220px]
+                        sm:w-[280px] sm:h-[280px]
+                        lg:w-[355px] lg:h-[355px]
                         rounded-full
                         border-[5px]
                         border-transparent
@@ -370,8 +416,9 @@
                 <!-- Inner photo circle -->
                 <div
                 class="absolute left-1/2 top-[43%] -translate-x-1/2 -translate-y-1/2
-                        w-[242px] h-[242px]
-                        sm:w-[312px] sm:h-[312px]
+                        w-[190px] h-[190px]
+                        sm:w-[242px] sm:h-[242px]
+                        lg:w-[312px] lg:h-[312px]
                         rounded-full overflow-hidden
                         bg-[#061421]
                         border border-cyan-500/20
@@ -437,12 +484,12 @@
                 <!-- QA MODE -->
                 <div
                 class="absolute top-0 right-0
-                        w-32 sm:w-36
+                        w-28 sm:w-32 lg:w-36
                         bg-[#06111d]/90
                         backdrop-blur-md
                         border border-cyan-500/45
                         rounded-xl
-                        px-4 py-3
+                        px-3 py-2 sm:px-4 sm:py-3
                         shadow-[0_0_20px_rgba(0,229,255,0.12)]"
                 >
                 <div
@@ -592,7 +639,7 @@
                 <!-- Identity tag -->
                 <div
                 class="absolute left-[3%] bottom-[7%]
-                        w-[230px] sm:w-[250px]
+                        w-[190px] sm:w-[230px] lg:w-[250px]
                         bg-[#06111d]/95
                         backdrop-blur-md
                         border border-cyan-500/50
@@ -1451,11 +1498,45 @@
         <div
           class="text-center md:text-right text-slate-500 font-mono text-[11px]"
         >
-          Built with precision, test coverage, and modern dark cyber aesthetics.
           © 2026 Jaenal Arifin.
         </div>
       </div>
     </footer>
     <!-- END: MainFooter -->
+
+    <script>
+      const mobileMenuButton = document.getElementById("mobileMenuButton");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener("click", () => {
+          const isOpen = !mobileMenu.classList.contains("hidden");
+
+          mobileMenu.classList.toggle("hidden");
+
+          mobileMenuButton.setAttribute(
+            "aria-expanded",
+            String(!isOpen)
+          );
+        });
+
+        document.querySelectorAll("#mobileMenu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            mobileMenuButton.setAttribute("aria-expanded", "false");
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuButton.contains(event.target)
+          ) {
+            mobileMenu.classList.add("hidden");
+            mobileMenuButton.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+    </script>
   </body>
 </html>
