@@ -335,7 +335,20 @@
                 class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-transparent hover:bg-cyan-950/40 border border-slate-700 hover:border-cyan-400/50 text-slate-300 hover:text-cyan-300 font-medium text-sm transition-all duration-200"
                 href="#contact"
               >
-                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <svg
+                  class="w-4 h-4 text-emerald-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M3 5.5A2.5 2.5 0 015.5 3h2.2c.5 0 .95.3 1.15.76l1.1 2.65c.2.48.08 1.03-.3 1.38L8.2 9.9a13.5 13.5 0 005.9 5.9l2.11-1.45c.35-.25.82-.28 1.2-.1l2.65 1.1c.46.2.76.65.76 1.15v2.2A2.5 2.5 0 0118.32 21C9.32 21 3 14.68 3 5.5z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.8"
+                  ></path>
+                </svg>
+
                 Contact
               </a>
             </div>
@@ -1077,7 +1090,7 @@
       </section>
       
       <section
-        class="screen-frame rounded-2xl bg-cyber-900/60 p-8 lg:p-10 relative backdrop-blur-xl space-y-8"
+        class="screen-frame rounded-2xl bg-cyber-900/60 p-5 sm:p-8 lg:p-10 relative backdrop-blur-xl space-y-8"
         id="skills"
       >
         <!-- Section Header -->
@@ -1093,172 +1106,25 @@
               ></span>
               Technical Competence
             </div>
-            <h2 class="text-3xl font-extrabold text-white tracking-tight">
+
+            <h2
+              class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight"
+            >
               Skills &amp; Tech Stack
             </h2>
           </div>
-          
         </div>
+
         <!-- Skills 3-Column Structured Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Card 1: Frontend & Mobile -->
-          <div class="cyber-card rounded-xl p-6 space-y-5">
-            <div
-              class="flex items-center gap-3 border-b border-slate-800/80 pb-4"
-            >
-              <div
-                class="p-2.5 rounded-lg bg-cyan-950 border border-cyan-500/30 text-cyan-400"
-              >
-                <svg
-                  class="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewbox="0 0 24 24"
-                >
-                  <path
-                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                  ></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-base font-bold text-white">
-                  Frontend / Mobile
-                </h3>
-                <p class="text-[11px] text-slate-400 font-mono">
-                  Mobile App Engineering
-                </p>
-              </div>
-            </div>
-            <ul class="space-y-3 font-mono text-xs">
-              <li
-                class="flex items-center justify-between p-2 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
-              >
-                <div class="flex items-center gap-2.5">
-                  <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-                  <span class="text-slate-200 font-sans font-medium"
-                    >Kotlin</span
-                  >
-                </div>
-                <span class="text-cyan-400 text-[10px]">Native Android</span>
-              </li>
-              <li
-                class="flex items-center justify-between p-2 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
-              >
-                <div class="flex items-center gap-2.5">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                  <span class="text-slate-200 font-sans font-medium"
-                    >Android Studio</span
-                  >
-                </div>
-                <span class="text-cyan-400 text-[10px]">SDK &amp; Gradle</span>
-              </li>
-              <li
-                class="flex items-center justify-between p-2 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
-              >
-                <div class="flex items-center gap-2.5">
-                  <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-                  <span class="text-slate-200 font-sans font-medium"
-                    >Jetpack Compose</span
-                  >
-                </div>
-                <span class="text-cyan-400 text-[10px]">Declarative UI</span>
-              </li>
-              <li
-                class="flex items-center justify-between p-2 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
-              >
-                <div class="flex items-center gap-2.5">
-                  <span class="w-2 h-2 rounded-full bg-blue-400"></span>
-                  <span class="text-slate-200 font-sans font-medium"
-                    >Flutter &amp; Dart</span
-                  >
-                </div>
-                <span class="text-cyan-400 text-[10px]">Cross-platform</span>
-              </li>
-            </ul>
-          </div>
-          <!-- Card 2: Backend & API -->
-          <div class="cyber-card rounded-xl p-6 space-y-5">
-            <div
-              class="flex items-center gap-3 border-b border-slate-800/80 pb-4"
-            >
-              <div
-                class="p-2.5 rounded-lg bg-cyan-950 border border-cyan-500/30 text-cyan-400"
-              >
-                <svg
-                  class="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewbox="0 0 24 24"
-                >
-                  <path
-                    d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                  ></path>
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-base font-bold text-white">Backend / API</h3>
-                <p class="text-[11px] text-slate-400 font-mono">
-                  Microservices &amp; Storage
-                </p>
-              </div>
-            </div>
-            <ul class="space-y-3 font-mono text-xs">
-              <li
-                class="flex items-center justify-between p-2 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
-              >
-                <div class="flex items-center gap-2.5">
-                  <span class="w-2 h-2 rounded-full bg-red-500"></span>
-                  <span class="text-slate-200 font-sans font-medium"
-                    >Laravel &amp; PHP</span
-                  >
-                </div>
-                <span class="text-cyan-400 text-[10px]">REST API / MVC</span>
-              </li>
-              <li
-                class="flex items-center justify-between p-2 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
-              >
-                <div class="flex items-center gap-2.5">
-                  <span class="w-2 h-2 rounded-full bg-teal-400"></span>
-                  <span class="text-slate-200 font-sans font-medium"
-                    >FastAPI &amp; Python</span
-                  >
-                </div>
-                <span class="text-cyan-400 text-[10px]">High Throughput</span>
-              </li>
-              <li
-                class="flex items-center justify-between p-2 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
-              >
-                <div class="flex items-center gap-2.5">
-                  <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-                  <span class="text-slate-200 font-sans font-medium"
-                    >MySQL &amp; Postgres</span
-                  >
-                </div>
-                <span class="text-cyan-400 text-[10px]">Relational DB</span>
-              </li>
-              <li
-                class="flex items-center justify-between p-2 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
-              >
-                <div class="flex items-center gap-2.5">
-                  <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-                  <span class="text-slate-200 font-sans font-medium"
-                    >Firebase Suite</span
-                  >
-                </div>
-                <span class="text-cyan-400 text-[10px]"
-                  >Auth &amp; Firestore</span
-                >
-              </li>
-            </ul>
-          </div>
-          <!-- Card 3: Quality Assurance -->
-          <div class="cyber-card rounded-xl p-6 space-y-5">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+
+          <!-- ===================================================== -->
+          <!-- Card 1: Testing / QA -->
+          <!-- ===================================================== -->
+          <div
+            class="cyber-card rounded-xl p-5 sm:p-6 space-y-5 flex flex-col h-full"
+          >
+            <!-- Card Header -->
             <div
               class="flex items-center gap-3 border-b border-slate-800/80 pb-4"
             >
@@ -1279,65 +1145,365 @@
                   ></path>
                 </svg>
               </div>
+
               <div>
-                <h3 class="text-base font-bold text-white">Testing / QA</h3>
+                <h3 class="text-base font-bold text-white">
+                  Testing / QA
+                </h3>
                 <p class="text-[11px] text-slate-400 font-mono">
-                  Verification &amp; Security
+                  Software Testing
                 </p>
               </div>
             </div>
+
+            <!-- Skills List -->
             <ul class="space-y-3 font-mono text-xs">
               <li
-                class="flex items-center justify-between p-2 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
+                class="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
               >
-                <div class="flex items-center gap-2.5">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                  <span class="text-slate-200 font-sans font-medium"
-                    >Manual &amp; Exploratory</span
-                  >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span
+                    class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"
+                  ></span>
+                  <span class="text-slate-200 font-sans font-medium">
+                    Manual &amp; Functional
+                  </span>
                 </div>
-                <span class="text-cyan-400 text-[10px]">Test Matrix</span>
+
+                <span class="text-cyan-400 text-[10px] text-right shrink-0">
+                  Test Cases
+                </span>
               </li>
+
               <li
-                class="flex items-center justify-between p-2 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
+                class="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
               >
-                <div class="flex items-center gap-2.5">
-                  <span class="w-2 h-2 rounded-full bg-red-400"></span>
-                  <span class="text-slate-200 font-sans font-medium"
-                    >Apache JMeter</span
-                  >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span
+                    class="w-2 h-2 rounded-full bg-cyan-400 shrink-0"
+                  ></span>
+                  <span class="text-slate-200 font-sans font-medium">
+                    Regression &amp; UAT
+                  </span>
                 </div>
-                <span class="text-cyan-400 text-[10px]">Load &amp; Stress</span>
+
+                <span class="text-cyan-400 text-[10px] text-right shrink-0">
+                  Retesting
+                </span>
               </li>
+
               <li
-                class="flex items-center justify-between p-2 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
+                class="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
               >
-                <div class="flex items-center gap-2.5">
-                  <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-                  <span class="text-slate-200 font-sans font-medium"
-                    >OWASP ZAP</span
-                  >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span
+                    class="w-2 h-2 rounded-full bg-blue-400 shrink-0"
+                  ></span>
+                  <span class="text-slate-200 font-sans font-medium">
+                    API Testing
+                  </span>
                 </div>
-                <span class="text-cyan-400 text-[10px]">Security Audit</span>
+
+                <span class="text-cyan-400 text-[10px] text-right shrink-0">
+                  Postman
+                </span>
               </li>
+
               <li
-                class="flex items-center justify-between p-2 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
+                class="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
               >
-                <div class="flex items-center gap-2.5">
-                  <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-                  <span class="text-slate-200 font-sans font-medium"
-                    >Postman </span
-                  >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span
+                    class="w-2 h-2 rounded-full bg-amber-400 shrink-0"
+                  ></span>
+                  <span class="text-slate-200 font-sans font-medium">
+                    Performance Testing
+                  </span>
                 </div>
-                <span class="text-cyan-400 text-[10px]">API Runner</span>
+
+                <span class="text-cyan-400 text-[10px] text-right shrink-0">
+                  JMeter
+                </span>
+              </li>
+
+              <li
+                class="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
+              >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span
+                    class="w-2 h-2 rounded-full bg-red-400 shrink-0"
+                  ></span>
+                  <span class="text-slate-200 font-sans font-medium">
+                    Security Testing
+                  </span>
+                </div>
+
+                <span class="text-cyan-400 text-[10px] text-right shrink-0">
+                  OWASP ZAP
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ===================================================== -->
+          <!-- Card 2: Automation & QA Tools -->
+          <!-- ===================================================== -->
+          <div
+            class="cyber-card rounded-xl p-5 sm:p-6 space-y-5 flex flex-col h-full"
+          >
+            <!-- Card Header -->
+            <div
+              class="flex items-center gap-3 border-b border-slate-800/80 pb-4"
+            >
+              <div
+                class="p-2.5 rounded-lg bg-cyan-950 border border-cyan-500/30 text-cyan-400"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewbox="0 0 24 24"
+                >
+                  <path
+                    d="M8 9l-3 3 3 3m8-6 3 3-3 3M14 5l-4 14"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                </svg>
+              </div>
+
+              <div>
+                <h3 class="text-base font-bold text-white">
+                  Automation &amp; QA Tools
+                </h3>
+                <p class="text-[11px] text-slate-400 font-mono">
+                  Automation &amp; Test Management
+                </p>
+              </div>
+            </div>
+
+            <!-- Skills List -->
+            <ul class="space-y-3 font-mono text-xs">
+              <li
+                class="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
+              >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span
+                    class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"
+                  ></span>
+                  <span class="text-slate-200 font-sans font-medium">
+                    Selenium 4
+                  </span>
+                </div>
+
+                <span class="text-cyan-400 text-[10px] text-right shrink-0">
+                  UI Automation
+                </span>
+              </li>
+
+              <li
+                class="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
+              >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span
+                    class="w-2 h-2 rounded-full bg-blue-400 shrink-0"
+                  ></span>
+                  <span class="text-slate-200 font-sans font-medium">
+                    pytest
+                  </span>
+                </div>
+
+                <span class="text-cyan-400 text-[10px] text-right shrink-0">
+                  Test Framework
+                </span>
+              </li>
+
+              <li
+                class="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
+              >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span
+                    class="w-2 h-2 rounded-full bg-indigo-400 shrink-0"
+                  ></span>
+                  <span class="text-slate-200 font-sans font-medium">
+                    Jira
+                  </span>
+                </div>
+
+                <span class="text-cyan-400 text-[10px] text-right shrink-0">
+                  Bug Tracking
+                </span>
+              </li>
+
+              <li
+                class="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
+              >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span
+                    class="w-2 h-2 rounded-full bg-amber-400 shrink-0"
+                  ></span>
+                  <span class="text-slate-200 font-sans font-medium">
+                    Test Documentation
+                  </span>
+                </div>
+
+                <span class="text-cyan-400 text-[10px] text-right shrink-0">
+                  Excel / Sheets
+                </span>
+              </li>
+
+              <li
+                class="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
+              >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span
+                    class="w-2 h-2 rounded-full bg-cyan-400 shrink-0"
+                  ></span>
+                  <span class="text-slate-200 font-sans font-medium">
+                    Git &amp; GitHub
+                  </span>
+                </div>
+
+                <span class="text-cyan-400 text-[10px] text-right shrink-0">
+                  Version Control
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ===================================================== -->
+          <!-- Card 3: Development -->
+          <!-- ===================================================== -->
+          <div
+            class="cyber-card rounded-xl p-5 sm:p-6 space-y-5 flex flex-col h-full"
+          >
+            <!-- Card Header -->
+            <div
+              class="flex items-center gap-3 border-b border-slate-800/80 pb-4"
+            >
+              <div
+                class="p-2.5 rounded-lg bg-cyan-950 border border-cyan-500/30 text-cyan-400"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewbox="0 0 24 24"
+                >
+                  <path
+                    d="M8 9l-3 3 3 3m8-6 3 3-3 3M14 5l-4 14"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                </svg>
+              </div>
+
+              <div>
+                <h3 class="text-base font-bold text-white">
+                  Development
+                </h3>
+                <p class="text-[11px] text-slate-400 font-mono">
+                  Web &amp; Mobile Development
+                </p>
+              </div>
+            </div>
+
+            <!-- Skills List -->
+            <ul class="space-y-3 font-mono text-xs">
+              <li
+                class="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
+              >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span
+                    class="w-2 h-2 rounded-full bg-red-400 shrink-0"
+                  ></span>
+                  <span class="text-slate-200 font-sans font-medium">
+                    Laravel &amp; PHP
+                  </span>
+                </div>
+
+                <span class="text-cyan-400 text-[10px] text-right shrink-0">
+                  Web Application
+                </span>
+              </li>
+
+              <li
+                class="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
+              >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span
+                    class="w-2 h-2 rounded-full bg-purple-400 shrink-0"
+                  ></span>
+                  <span class="text-slate-200 font-sans font-medium">
+                    Kotlin
+                  </span>
+                </div>
+
+                <span class="text-cyan-400 text-[10px] text-right shrink-0">
+                  Native Android
+                </span>
+              </li>
+
+              <li
+                class="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
+              >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span
+                    class="w-2 h-2 rounded-full bg-teal-400 shrink-0"
+                  ></span>
+                  <span class="text-slate-200 font-sans font-medium">
+                    FastAPI &amp; Python
+                  </span>
+                </div>
+
+                <span class="text-cyan-400 text-[10px] text-right shrink-0">
+                  REST API
+                </span>
+              </li>
+
+              <li
+                class="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
+              >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span
+                    class="w-2 h-2 rounded-full bg-blue-400 shrink-0"
+                  ></span>
+                  <span class="text-slate-200 font-sans font-medium">
+                    PostgreSQL
+                  </span>
+                </div>
+
+                <span class="text-cyan-400 text-[10px] text-right shrink-0">
+                  Relational DB
+                </span>
+              </li>
+
+              <li
+                class="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-cyber-950/60 border border-slate-800/80 hover:border-cyan-500/40 transition-colors"
+              >
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span
+                    class="w-2 h-2 rounded-full bg-cyan-400 shrink-0"
+                  ></span>
+                  <span class="text-slate-200 font-sans font-medium">
+                    Android Studio
+                  </span>
+                </div>
+
+                <span class="text-cyan-400 text-[10px] text-right shrink-0">
+                  Android Development
+                </span>
               </li>
             </ul>
           </div>
         </div>
+
         <!-- Bottom Certificates CTA Button -->
         <div class="flex justify-center pt-2">
           <a
-            class="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-400 hover:from-cyan-400 hover:to-cyan-300 text-slate-950 font-bold text-sm tracking-wide shadow-cyan-button transition-all"
+            class="inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-cyan-400 hover:from-cyan-400 hover:to-cyan-300 text-slate-950 font-bold text-sm tracking-wide shadow-cyan-button transition-all"
             href="https://drive.google.com/drive/folders/1NRSHyOHpxV_XyvKYDPKJjT49RAx3woiQ?usp=sharing"
             rel="noopener noreferrer"
             target="_blank"
@@ -1354,7 +1520,8 @@
                 stroke-linejoin="round"
               ></path>
             </svg>
-            View Verified QA &amp; Developer Certificates
+
+            View My Certifications
           </a>
         </div>
       </section>
