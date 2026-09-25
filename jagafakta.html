@@ -8,51 +8,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="neon.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style data-purpose="custom-background">
-      body {
-        background-color: #05070c;
-        background-image:
-          linear-gradient(
-            to right,
-            rgba(255, 255, 255, 0.02) 1px,
-            transparent 1px
-          ),
-          linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 0.02) 1px,
-            transparent 1px
-          );
-        background-size: 40px 40px;
-      }
-    </style>
-    <style data-purpose="glow-effects">
-      .cyber-glow-card {
-        position: relative;
-        border: 1px solid rgba(0, 242, 254, 0.28);
-        box-shadow:
-          0 0 25px -4px rgba(0, 242, 254, 0.18),
-          inset 0 0 15px -3px rgba(0, 242, 254, 0.08);
-      }
-      .neon-pill-border {
-        border: 1px solid rgba(0, 242, 254, 0.35);
-        background: radial-gradient(
-          120% 120% at 50% 0%,
-          rgba(0, 242, 254, 0.15) 0%,
-          rgba(12, 18, 32, 0.6) 100%
-        );
-      }
-      .card-glass {
-        background-color: rgba(12, 18, 32, 0.75);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.07);
-      }
-      .card-glass:hover {
-        border-color: rgba(0, 242, 254, 0.3);
-      }
-    </style>
+    
   </head>
 
-  <body class="bg-neutral-900 text-neutral-100">
+  <body class=" text-neutral-100">
     <!-- NAVBAR -->
       <header
           class="sticky top-0 z-40 bg-neutral-900/70 backdrop-blur border-b border-neutral-800"
@@ -107,7 +66,7 @@
 
 
     <!-- CONTENT -->
-    <main class="max-w-5xl mx-auto px-6 py-12 space-y-8">
+    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-10 space-y-12 flex-grow w-full">
       <!-- BEGIN: HeaderAndMetrics -->
       <section class="text-center space-y-6 pt-4" data-purpose="hero-header">
         <!-- Cyan Glowing Category Pill -->
@@ -141,7 +100,8 @@
       </section>
       <!-- END: HeaderAndMetrics -->
       <!-- BEGIN: HeroShowcasePreview -->
-      <section class="max-w-5xl mx-auto" data-purpose="app-visual-showcase">
+      <section  class="w-full"
+           data-purpose="app-visual-showcase">
         <div
           class="cyber-glow-card rounded-2xl bg-gradient-to-b from-[#0e1626] to-[#070b13] p-4 sm:p-8 overflow-hidden"
         >
@@ -361,7 +321,8 @@
       </section>
       <!-- END: HeroShowcasePreview -->
       <!-- BEGIN: ProjectOverviewSection -->
-      <section class="max-w-5xl mx-auto" data-purpose="project-overview">
+      <section class="w-full"
+                data-purpose="project-overview">
         <div
           class="card-glass rounded-2xl p-6 sm:p-8 border border-cyber-border"
         >
@@ -479,7 +440,7 @@
       <!-- END: ProjectOverviewSection -->
       <!-- BEGIN: DualColumnRoleAndStack -->
       <section
-        class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8"
+        class="w-full"
         data-purpose="role-and-techstack"
       >
         <!-- Left Column: Role & Responsibilities -->
