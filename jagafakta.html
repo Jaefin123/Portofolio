@@ -585,7 +585,11 @@
             </div>
           </div>
           <!-- 8 Grid Cards matching SCREEN_3 aesthetic -->
-          <div class="grid grid-cols-2 gap-3" data-purpose="tech-stack-cards">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 gap-3"
+            data-purpose="tech-stack-cards"
+          >
+
             <!-- Kotlin -->
             <div
               class="p-3 rounded-xl bg-slate-900/80 border border-cyber-border hover:border-cyan-400/40 transition-all flex items-center space-x-3"
@@ -595,11 +599,13 @@
               >
                 Kt
               </div>
-              <div>
+
+              <div class="min-w-0">
                 <p class="text-xs font-semibold text-white">Kotlin</p>
                 <p class="text-[10px] text-slate-400">Android Application</p>
               </div>
             </div>
+
             <!-- Android Studio -->
             <div
               class="p-3 rounded-xl bg-slate-900/80 border border-cyber-border hover:border-cyan-400/40 transition-all flex items-center space-x-3"
@@ -609,13 +615,13 @@
               >
                 AS
               </div>
-              <div>
+
+              <div class="min-w-0">
                 <p class="text-xs font-semibold text-white">Android Studio</p>
-                <p class="text-[10px] text-slate-400">
-                  Android Development
-                </p>
+                <p class="text-[10px] text-slate-400">Android Development</p>
               </div>
             </div>
+
             <!-- FastAPI -->
             <div
               class="p-3 rounded-xl bg-slate-900/80 border border-cyber-border hover:border-cyan-400/40 transition-all flex items-center space-x-3"
@@ -625,13 +631,13 @@
               >
                 ⚡
               </div>
-              <div>
+
+              <div class="min-w-0">
                 <p class="text-xs font-semibold text-white">FastAPI</p>
-                <p class="text-[10px] text-slate-400">
-                 AI Backend / REST API
-                </p>
+                <p class="text-[10px] text-slate-400">Python Backend / REST API</p>
               </div>
             </div>
+
             <!-- IndoBERT -->
             <div
               class="p-3 rounded-xl bg-slate-900/80 border border-cyber-border hover:border-cyan-400/40 transition-all flex items-center space-x-3"
@@ -641,67 +647,125 @@
               >
                 🤗
               </div>
-              <div>
+
+              <div class="min-w-0">
                 <p class="text-xs font-semibold text-white">IndoBERT</p>
-                <p class="text-[10px] text-slate-400">Fine-tuned Hoax Classification Model</p>
+                <p class="text-[10px] text-slate-400">
+                  Fine-tuned Hoax Classification
+                </p>
               </div>
             </div>
+
+            <!-- Hugging Face -->
+            <div
+              class="p-3 rounded-xl bg-slate-900/80 border border-cyber-border hover:border-cyan-400/40 transition-all flex items-center space-x-3"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-yellow-300 font-bold text-xs"
+              >
+                HF
+              </div>
+
+              <div class="min-w-0">
+                <p class="text-xs font-semibold text-white">Hugging Face</p>
+                <p class="text-[10px] text-slate-400">
+                  Model Hosting
+                </p>
+              </div>
+            </div>
+
+            <!-- Tavily -->
+            <div
+              class="p-3 rounded-xl bg-slate-900/80 border border-cyber-border hover:border-cyan-400/40 transition-all flex items-center space-x-3"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-300 font-bold text-xs"
+              >
+                TV
+              </div>
+
+              <div class="min-w-0">
+                <p class="text-xs font-semibold text-white">Tavily</p>
+                <p class="text-[10px] text-slate-400">
+                  Related News Retrieval
+                </p>
+              </div>
+            </div>
+
+            <!-- Sentence Transformers -->
+            <div
+              class="p-3 rounded-xl bg-slate-900/80 border border-cyber-border hover:border-cyan-400/40 transition-all flex items-center space-x-3"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-300 font-bold text-xs"
+              >
+                ST
+              </div>
+
+              <div class="min-w-0">
+                <p class="text-xs font-semibold text-white">
+                  Sentence Transformers
+                </p>
+                <p class="text-[10px] text-slate-400">
+                  Semantic Similarity
+                </p>
+              </div>
+            </div>
+
+            <!-- Google ML Kit -->
+            <div
+              class="p-3 rounded-xl bg-slate-900/80 border border-cyber-border hover:border-cyan-400/40 transition-all flex items-center space-x-3"
+            >
+              <div
+                class="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-300 font-bold text-xs"
+              >
+                OCR
+              </div>
+
+              <div class="min-w-0">
+                <p class="text-xs font-semibold text-white">Google ML Kit</p>
+                <p class="text-[10px] text-slate-400">
+                  Text Recognition / OCR
+                </p>
+              </div>
+            </div>
+
             <!-- Firebase -->
             <div
               class="p-3 rounded-xl bg-slate-900/80 border border-cyber-border hover:border-cyan-400/40 transition-all flex items-center space-x-3"
             >
               <div
-                class="w-8 h-8 rounded-lg bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-yellow-400 font-bold text-xs"
+                class="w-8 h-8 rounded-lg bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-yellow-300 font-bold text-xs"
               >
                 🔥
               </div>
-              <div>
+
+              <div class="min-w-0">
                 <p class="text-xs font-semibold text-white">Firebase</p>
-                <p class="text-[10px] text-slate-400">Authentication / Data Storage</p>
+                <p class="text-[10px] text-slate-400">
+                  Authentication / Firestore
+                </p>
               </div>
             </div>
+
             <!-- Postman -->
             <div
               class="p-3 rounded-xl bg-slate-900/80 border border-cyber-border hover:border-cyan-400/40 transition-all flex items-center space-x-3"
             >
               <div
-                class="w-8 h-8 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400 font-bold text-xs"
+                class="w-8 h-8 rounded-lg bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-300 font-bold text-xs"
               >
-                📬
+                PM
               </div>
-              <div>
+
+              <div class="min-w-0">
                 <p class="text-xs font-semibold text-white">Postman</p>
-                <p class="text-[10px] text-slate-400">API Testing</p>
+                <p class="text-[10px] text-slate-400">
+                  API Testing
+                </p>
               </div>
             </div>
-            <!-- Apache JMeter -->
-            <div
-              class="p-3 rounded-xl bg-slate-900/80 border border-cyber-border hover:border-cyan-400/40 transition-all flex items-center space-x-3"
-            >
-              <div
-                class="w-8 h-8 rounded-lg bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 font-bold text-xs"
-              >
-                ⚡
-              </div>
-              <div>
-                <p class="text-xs font-semibold text-white">Apache JMeter</p>
-                <p class="text-[10px] text-slate-400">Load &amp; Concurrency</p>
-              </div>
-            </div>
-            <!-- Git & GitHub -->
-            <div
-              class="p-3 rounded-xl bg-slate-900/80 border border-cyber-border hover:border-cyan-400/40 transition-all flex items-center space-x-3"
-            >
-              <div
-                class="w-8 h-8 rounded-lg bg-slate-700/30 border border-slate-600/40 flex items-center justify-center text-slate-300 font-bold text-xs"
-              >
-                🐙
-              </div>
-              <div>
-                <p class="text-xs font-semibold text-white">GitHub</p>
-                <p class="text-[10px] text-slate-400">Source Code & Version Control</p>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
