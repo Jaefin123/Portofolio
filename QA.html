@@ -11,8 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="neon.css" />
-    <!-- Cadangan: hanya berlaku bila neon.css gagal dimuat. neon.css dimuat setelah blok ini
-         dengan spesifisitas sama, jadi definisi di neon.css selalu menang. -->
+    
     <style>
       html { background: #050a14; }
       body {
@@ -87,7 +86,7 @@
           </span>
           <span class="inline-flex items-center gap-2">
             <span class="px-2 py-0.5 rounded-md bg-emerald-950/70 border border-emerald-500/40 text-emerald-300 font-medium">Project E-Learning</span>
-            aplikasi yang saya kembangkan bersama teman; QA saya kerjakan sendiri
+            aplikasi yang saya kembangkan bersama rekan; pengujiannya saya kerjakan sendiri
           </span>
           <span class="inline-flex items-center gap-2">
             <span class="px-2 py-0.5 rounded-md bg-amber-950/60 border border-amber-500/40 text-amber-300 font-medium">Dasar</span>
@@ -172,8 +171,8 @@ test_course.py::test_student_current_course PASSED
             </p>
             <p class="text-slate-400">
               Di magang, test case dan laporan saya tulis di spreadsheet yang dipakai bersama tim. Saya tidak memakai
-              Jira di sana, jadi pengalaman Jira dan automation saya dapatkan dari project E-Learning, aplikasi web Laravel
-              yang saya kembangkan bersama seorang teman.
+              Jira di sana, jadi pengalaman Jira dan automation saya dapatkan dari project E-Learning, aplikasi web (Laravel, Blade, PHP, PostgreSQL) yang saya
+              kembangkan berdua dengan seorang rekan.
             </p>
           </div>
 
@@ -250,7 +249,7 @@ test_course.py::test_student_current_course PASSED
                   <span class="px-2 py-0.5 rounded-md bg-cyan-950/70 border border-cyan-500/40 text-cyan-300 text-xs font-medium">Magang</span>
                 </div>
                 <p class="text-slate-400 mt-1 leading-relaxed">
-                  Melaporkan bug langsung kepada PIC, lalu mengetes ulang perbaikan bug dan fitur baru. Contoh temuan:
+                  Melaporkan bug langsung kepada PIC, lalu mengetes ulang perbaikan bug dan fitur baru serta memeriksa ulang fitur terkait (regression check ringan, tanpa dokumen terpisah). Contoh temuan:
                   notifikasi email tidak terkirim, terlihat di UAT tiga peran sekaligus.
                 </p>
               </div>
@@ -584,46 +583,41 @@ test_course.py::test_student_current_course PASSED
           <div>
             <h2 class="text-xl font-heading font-bold text-white">Project E-Learning</h2>
             <p class="text-xs text-slate-400">
-              Aplikasi web Laravel yang saya kembangkan bersama seorang teman (masing-masing frontend dan backend)
-              untuk kebutuhan sebuah universitas. Proyek ini tidak dilanjutkan. Saya sendiri yang berperan sebagai
-              QA-nya. Karena saya ikut mengembangkannya, hasil pengujian ini bukan pengujian oleh pihak ketiga.
+              Aplikasi web e-learning (Laravel, Blade, PHP, PostgreSQL) untuk kebutuhan sebuah universitas, yang
+              saya kembangkan berdua dengan seorang rekan. Seluruh pengujian di bawah saya kerjakan sendiri sebagai
+              QA. Karena saya ikut mengembangkannya, pengujian ini bersifat mandiri, bukan pengujian oleh pihak ketiga.
             </p>
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <article class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/80 flex flex-col gap-3">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-emerald-950/50 border border-emerald-800/50 text-emerald-400 flex items-center justify-center shrink-0">
-              <i class="w-4 h-4" data-lucide="check-circle-2"></i>
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-lg bg-emerald-950/50 border border-emerald-800/50 text-emerald-400 flex items-center justify-center shrink-0">
+                <i class="w-4 h-4" data-lucide="check-circle-2"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-heading font-bold text-white">UI automation</h3>
+                <span class="px-2 py-0.5 rounded-md bg-emerald-950/70 border border-emerald-500/40 text-emerald-300 text-xs font-medium">Project E-Learning</span>
+              </div>
             </div>
-            <div>
-              <h3 class="text-base font-heading font-bold text-white">UI automation</h3>
-              <span class="px-2 py-0.5 rounded-md bg-emerald-950/70 border border-emerald-500/40 text-emerald-300 text-xs font-medium">Project E-Learning</span>
+            <p class="text-sm text-slate-300 leading-relaxed flex-1">
+              Selenium 4, Python, dan pytest di Chrome. Enam skenario: halaman login, login valid dan tidak valid, navigasi course mahasiswa, pembuatan akun mahasiswa oleh admin, dan logout. Hasil: 6 passed, 0 failed. Memakai explicit wait dan kredensial dari file environment.
+            </p>
+            <div class="pt-4 border-t border-slate-800 space-y-2">
+              <div class="text-xs text-slate-400">Repositori GitHub</div>
+              <div class="grid grid-cols-2 gap-2">
+                <a class="inline-flex h-11 items-center justify-center gap-2 px-3 rounded-xl whitespace-nowrap font-semibold text-sm transition-colors bg-slate-900/90 border border-cyan-900/60 text-cyan-300 hover:text-cyan-200 hover:bg-cyan-950/50 hover:border-cyan-500/40" href="https://github.com/jaefin123/e-learning-automation-testing" target="_blank" rel="noopener" aria-label="Repo automation di GitHub (tab baru)">
+                  <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  <span>Automation</span>
+                </a>
+                <a class="inline-flex h-11 items-center justify-center gap-2 px-3 rounded-xl whitespace-nowrap font-semibold text-sm transition-colors bg-slate-900/90 border border-slate-700 text-slate-200 hover:bg-slate-800/70 hover:border-slate-500" href="https://github.com/Jaefin123/e-learning" target="_blank" rel="noopener" aria-label="Repo aplikasi E-Learning di GitHub (tab baru)">
+                  <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  <span>Aplikasi</span>
+                </a>
+              </div>
             </div>
-          </div>
-
-          <p class="text-sm text-slate-300 leading-relaxed flex-1">
-            Selenium 4, Python, dan pytest di Chrome. Enam skenario: halaman login, login valid dan tidak valid, navigasi course mahasiswa, pembuatan akun mahasiswa oleh admin, dan logout. Hasil: 6 passed, 0 failed. Memakai explicit wait dan kredensial dari file environment.
-          </p>
-
-          <div class="pt-4 border-t border-slate-800 space-y-2">
-            <div class="grid grid-cols-2 gap-2">
-              <a class="inline-flex h-11 items-center justify-center gap-2 px-3 rounded-xl whitespace-nowrap font-semibold text-sm transition-colors bg-slate-900/90 border border-cyan-900/60 text-cyan-300 hover:text-cyan-200 hover:bg-cyan-950/50 hover:border-cyan-500/40"
-                href="https://github.com/jaefin123/e-learning-automation-testing" target="_blank" rel="noopener"
-                aria-label="Repo automation di GitHub (tab baru)">
-                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                <span>Automation</span>
-              </a>
-              <a class="inline-flex h-11 items-center justify-center gap-2 px-3 rounded-xl whitespace-nowrap font-semibold text-sm transition-colors bg-slate-900/90 border border-slate-700 text-slate-200 hover:bg-slate-800/70 hover:border-slate-500"
-                href="https://github.com/Jaefin123/e-learning" target="_blank" rel="noopener"
-                aria-label="Repo aplikasi E-Learning di GitHub (tab baru)">
-                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                <span>Aplikasi</span>
-              </a>
-            </div>
-          </div>
-        </article>
+          </article>
 
           <article class="bg-slate-950/60 p-5 rounded-xl border border-slate-800/80 flex flex-col gap-3">
             <div class="flex items-center gap-3">
@@ -639,7 +633,7 @@ test_course.py::test_student_current_course PASSED
               Postman untuk endpoint login dan course: 8 test case dengan skenario positif dan negatif (kredensial salah, field kosong, ID tidak ditemukan). Divalidasi lewat status code 200, 401, 404, 422 dan response body, lengkap dengan evidence.
             </p>
             <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-2">
-              <a class="inline-flex flex-1 min-w-[8rem] items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700 text-slate-200 hover:bg-slate-800/70 hover:border-slate-500 font-semibold text-sm transition-colors" href="https://drive.google.com/file/d/1yXiFJyeHY0Dd2PLvOF4kmvEVqk79G38L/view?usp=sharing" target="_blank" rel="noopener">
+              <a class="inline-flex flex-1 min-w-[8rem] items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700 text-slate-200 hover:bg-slate-800/70 hover:border-slate-500 font-semibold text-sm transition-colors" href="https://drive.google.com/file/d/123L1E23pdLwUoBDFgsQnqNYfFxj0Iz60/view?usp=drive_link" target="_blank" rel="noopener">
                 <i class="w-4 h-4" data-lucide="file-text"></i>
                 Lihat di PDF
               </a>
@@ -660,7 +654,7 @@ test_course.py::test_student_current_course PASSED
               Jira dengan metode Scrum: backlog pengujian dalam 3 sprint, disusun sebagai Epic, Story, dan Task/Test Case. Bug dicatat beserta evidence, lalu diretest sampai berstatus Done.
             </p>
             <div class="pt-4 border-t border-slate-800 flex flex-wrap gap-2">
-              <a class="inline-flex flex-1 min-w-[8rem] items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700 text-slate-200 hover:bg-slate-800/70 hover:border-slate-500 font-semibold text-sm transition-colors" href="https://drive.google.com/file/d/1yXiFJyeHY0Dd2PLvOF4kmvEVqk79G38L/view?usp=sharing" target="_blank" rel="noopener">
+              <a class="inline-flex flex-1 min-w-[8rem] items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700 text-slate-200 hover:bg-slate-800/70 hover:border-slate-500 font-semibold text-sm transition-colors" href="https://drive.google.com/file/d/123L1E23pdLwUoBDFgsQnqNYfFxj0Iz60/view?usp=drive_link" target="_blank" rel="noopener">
                 <i class="w-4 h-4" data-lucide="file-text"></i>
                 Lihat di PDF
               </a>
@@ -687,7 +681,7 @@ test_course.py::test_student_current_course PASSED
           </div>
           <a
             class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-400 text-slate-950 font-bold text-sm shadow-glow-cyan hover:opacity-95 transition-opacity"
-            href="https://drive.google.com/file/d/1yXiFJyeHY0Dd2PLvOF4kmvEVqk79G38L/view?usp=sharing"
+            href="https://drive.google.com/file/d/123L1E23pdLwUoBDFgsQnqNYfFxj0Iz60/view?usp=drive_link"
             target="_blank"
             rel="noopener"
           >
